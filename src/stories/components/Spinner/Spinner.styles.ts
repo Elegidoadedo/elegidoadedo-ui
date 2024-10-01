@@ -16,4 +16,6 @@ export const StyledSpinnerWrapper = styled.div`
   transform: translateZ(0);
   transform-origin: center;
   font-size: 0;
+  height: 16px;
+  width: 16px;
 `;

@@ -3,7 +3,6 @@ import {
   setBackgroundColor,
   setTextColor,
   setBorderColor,
-  setHoverBackgroundColor,
   setDisabledBackgroundColor,
 } from './Button.helpers';
 
@@ -14,6 +13,7 @@ const buttonCommonStyle = css<StyledProps>`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  border-radius: 12px;
   background-color: ${({ variant }) =>
     setBackgroundColor({variant })};
 
@@ -23,8 +23,7 @@ const buttonCommonStyle = css<StyledProps>`
     setBorderColor({  variant })};
   cursor: pointer;
   &:hover {
-    background-color: ${({  variant }) =>
-      setHoverBackgroundColor({ variant })};
+      filter: brightness(0.75); 
   }
   &:disabled {
     background-color: ${({ variant }) =>
@@ -36,11 +35,11 @@ const buttonCommonStyle = css<StyledProps>`
 `;
 
 export const StyledButton = styled.button<StyledProps>`
-  color: ${({ theme, color, variant }) =>
+  color: ${({ variant }) =>
     setTextColor({ variant })};
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
   padding: 1rem ;
-  font-size: 1 rem;
+  font-size: ${({ size }) => (size ?? '1rem')};
   white-space: nowrap;
   ${buttonCommonStyle}
 `;
@@ -60,15 +59,4 @@ export const Animation = styled.div<{ size: number }>`
   height: ${(props) => props.size}px;
   width: ${(props) => props.size}px;
   transform-origin: center;
-`;
-
-export const StyledIconButtonWrapper = styled.button<StyledProps>`
-  all: unset;
-  box-sizing: border-box;
-  color: ${({  variant }) =>
-    setTextColor({ variant  })};
-
-  border-radius: ${({ theme }) => theme.radius.rounded};
-  ${buttonCommonStyle}
-
 `;

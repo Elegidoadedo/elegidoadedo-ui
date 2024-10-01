@@ -1,0 +1,12 @@
+{
+    "plugins": [
+      [
+        "babel-plugin-styled-components",
+        {
+            "displayName": true,
+            "pure": true
+        }
+      ]
+    ],
+    "presets": ["@babel/preset-typescript"]
+  }

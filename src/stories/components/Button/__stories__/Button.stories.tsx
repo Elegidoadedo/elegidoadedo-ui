@@ -17,7 +17,7 @@ const meta: Meta<typeof Button> = {
   },
   argTypes: {
     variant: {
-      options: ['primary'],
+      options: ['primary', 'secondary', 'warning', 'success', 'error'],
       control: { type: 'select' },
       category: 'Prop',
     },
@@ -40,14 +40,36 @@ type Story = StoryObj<typeof Button>;
 
 const ButtonVariations = (props: Props) => {
   return (
-    <div style={{display: 'flex'}}>
+    <StyledColumnWrapper>
+      <StyledRowWrapper>
+
         <Button
           {...props}
           variant="primary"
         
         />
-    
-    </div>
+        <Button
+          {...props}
+          variant="secondary"
+        
+        />
+        <Button
+          {...props}
+          variant="success"
+        
+        />
+        <Button
+          {...props}
+          variant="warning"
+        
+        />
+        <Button
+          {...props}
+          variant="error"
+        
+        />
+    </StyledRowWrapper>
+    </StyledColumnWrapper>
   );
 };
 
@@ -59,7 +81,7 @@ const ButtonStates = (props: Props) => {
   return (
     <StyledColumnWrapper>
       <StyledRowWrapper>
-        <Button {...props} isLoading text="button loading" />
+        <Button {...props} variant='secondary' isLoading text="button loading" />
       </StyledRowWrapper>
       <StyledRowWrapper>
         <Button

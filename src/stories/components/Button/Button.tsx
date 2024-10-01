@@ -6,16 +6,14 @@ import { Spinner } from '../Spinner/Spinner';
 
 export const Button: FC<Props> = ({
   text,
-  size = 'medium',
-  color = 'primary',
   onClick,
-  shape = 'rounded',
   variant = 'primary',
   className,
   testId,
   isLoading,
   isDisabled,
   fullWidth,
+  size = '1rem',
   ...props
 }) => {
  
@@ -23,7 +21,7 @@ export const Button: FC<Props> = ({
   
 
   const renderLoadingIcon = () => (
-    <Spinner size={16} color="currentColor" />
+    <Spinner size={16} color="black" />
   );
 
 
@@ -39,8 +37,6 @@ export const Button: FC<Props> = ({
     <StyledButton
       fullWidth={fullWidth}
       variant={variant}
-      shape={shape}
-      color={color}
       size={size}
       onClick={handleOnClick}
       disabled={isDisabled}

@@ -1,8 +1,8 @@
 import React, { MouseEventHandler } from 'react';
 
-export type ButtonSize = 'small' | 'medium' | 'large';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
+
+export type ButtonVariant = 'primary' | 'secondary' | 'success' | 'warning' | 'error';
 
 export type ButtonColor = string; //TODO change with the palette ready
 
@@ -10,9 +10,8 @@ export interface Props
   extends ComponentPropsBase,
     React.ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
-  size?: ButtonSize;
+  size?: number;
   color?: ButtonColor;
-  shape?: 'square' | 'rounded';
   isLoading?: boolean;
   isDisabled?: boolean;
   variant?: ButtonVariant;
@@ -25,4 +24,5 @@ export interface Props
 export interface ButtonHelperParams {
   variant?: ButtonVariant;
   fullWidth?: Boolean;
+  size?: number;
 }

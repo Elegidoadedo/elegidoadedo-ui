@@ -1,10 +1,11 @@
-import { render, screen, waitFor, within } from '@testing-library/react';
+import React from 'react';
+import { render, screen} from '@testing-library/react';
 import { composeStories } from '@storybook/react';
 // import stories file as a module
 import * as stories from '../__stories__/Button.stories';
 
 
-const { Variations, Sizes, Shapes, WithIconAndLoading, States } =
+const { Variations, States } =
   composeStories(stories);
 
 describe('Button variations', () => {
@@ -15,9 +16,9 @@ describe('Button variations', () => {
       .getByText('Primary button primary color')
       .closest('button');
     expect(primaryButton).toBeInTheDocument();
-    expect(primaryButton).toHaveStyle('background-color: blue');
+    expect(primaryButton).toHaveStyle('background-color: black');
     expect(primaryButton).toHaveStyle('color: white');
-    expect(primaryButton).toHaveStyle('border-color: transparent');
+    expect(primaryButton).toHaveStyle('border-color: black');
   });
   
 });
@@ -29,13 +30,10 @@ describe('Button variations', () => {
 describe('Button with loading', () => {
 
   it('renders end icon loading correctly', async () => {
-    render(<WithIconAndLoading />);
-    const endIconButton = screen
-      .getByText('start icon loading')
-      .closest('button') as HTMLButtonElement;
-    const loadingIcon = await within(endIconButton).findByTitle('loader-icon');
+    render(<States />);
+    
+    const loadingIcon = screen.findByTitle('loader-icon');
     expect(loadingIcon).toBeInTheDocument();
-    const icon = within(endIconButton).queryByTitle('calendar');
-    expect(icon).not.toBeInTheDocument();
+    ;
   });
 });

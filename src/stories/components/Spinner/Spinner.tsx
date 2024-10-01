@@ -11,7 +11,7 @@ export const Spinner: FC<Props> = ({
 }) => {
   return (
     <StyledSpinnerWrapper data-testid={testId} className={className}>
-      <LoaderIcon  stroke={'black'} />
+      <LoaderIcon fill='black'  stroke={'black'}  />
     </StyledSpinnerWrapper>
   );
 };

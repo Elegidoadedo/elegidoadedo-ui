@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es6", 
+    "esModuleInterop": true, 
+    "forceConsistentCasingInFileNames": true,
+    "strict": true, 
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "jsx": "react-jsx", 
+    "module": "ESNext",  
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": true,
+    "allowJs": true,
+    "types": ["@testing-library/jest-dom"],
+  },
+  "include": ["src","custom.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}

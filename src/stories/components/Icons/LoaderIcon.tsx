@@ -14,8 +14,8 @@ export const LoaderIcon =
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 25 24"
-      width="1em"
-      height="1em"
+      width="1rem"
+      height="1rem"
       data-testid={title}
       aria-labelledby={titleId}
       {...props}

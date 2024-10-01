@@ -1,43 +1,53 @@
 
 import { ButtonHelperParams } from './Button.types';
 
+export const buttonThemes = {
+  background: {
+    primary: "black",
+    secondary: "white",
+    error: "red",
+    warning: "yellow",
+    success: "green",
+  },
+  text: {
+    primary: "white",
+  },
+  border: {
+    secondary: "black",
+    warning: "black",
+  }
+}
+
 
 export const setBackgroundColor = ({
   variant = 'primary',
 }: ButtonHelperParams) => {
-  if (variant === 'primary') return 'blue';
-  return 'transparent';
+  return buttonThemes.background[variant] || 'transparent'
 };
 
 export const setHoverBackgroundColor = ({
   variant = 'primary',
 }: ButtonHelperParams) => {
-  if (variant === 'primary') return 'blue';
-
-  return 'white';
+   return buttonThemes.background[variant] || 'transparent'
 };
 
 export const setDisabledBackgroundColor = ({
-
   variant = 'primary',
- 
 }: ButtonHelperParams) => {
-  if (variant === 'primary') return 'grey';
-  return 'transparent';
+ return 'grey'; //TODO DEFINE TONES
 };
 
 export const setTextColor = ({
   variant = 'primary',
 }: ButtonHelperParams) => {
-  if (variant === 'primary') return 'white';
-  return 'black';
+  return buttonThemes.text[variant] || 'black'
 };
 
 export const setBorderColor = ({
   variant = 'primary',
 }: ButtonHelperParams) => {
-  if (variant === 'secondary') return 'blue';
-  return 'transparent';
+  return buttonThemes.border[variant] || 'black'
+
 };
 
 
