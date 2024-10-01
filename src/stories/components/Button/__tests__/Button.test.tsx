@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen} from '@testing-library/react';
+import { render, screen, within} from '@testing-library/react';
 import { composeStories } from '@storybook/react';
 // import stories file as a module
 import * as stories from '../__stories__/Button.stories';
@@ -13,7 +13,7 @@ describe('Button variations', () => {
   it('renders primary button correctly', () => {
     render(<Variations />);
     const primaryButton = screen
-      .getByText('Primary button primary color')
+      .getByText('primary variant')
       .closest('button');
     expect(primaryButton).toBeInTheDocument();
     expect(primaryButton).toHaveStyle('background-color: black');
@@ -32,7 +32,10 @@ describe('Button with loading', () => {
   it('renders end icon loading correctly', async () => {
     render(<States />);
     
-    const loadingIcon = screen.findByTitle('loader-icon');
+    const button = screen
+      .getByText('button loading').closest('button');
+      console.log(button)
+    const loadingIcon = button? await within(button).findByTitle('loader-icon') : null;
     expect(loadingIcon).toBeInTheDocument();
     ;
   });

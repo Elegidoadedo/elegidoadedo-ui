@@ -30,7 +30,7 @@ export const Button: FC<Props> = ({
 
   const handleOnClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     if (isLoading) return;
-    onClick?.(e);
+    onClick?.();
   };
 
   return (

@@ -1,4 +1,5 @@
-import React, { MouseEventHandler } from 'react';
+import type React from 'react';
+import type { ComponentPropsBase } from 'src/stories/types/ComponentPropsBase';
 
 
 
@@ -7,8 +8,7 @@ export type ButtonVariant = 'primary' | 'secondary' | 'success' | 'warning' | 'e
 export type ButtonColor = string; //TODO change with the palette ready
 
 export interface Props
-  extends ComponentPropsBase,
-    React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends ComponentPropsBase{
   text?: string;
   size?: number;
   color?: ButtonColor;
@@ -16,6 +16,7 @@ export interface Props
   isDisabled?: boolean;
   variant?: ButtonVariant;
   fullWidth?: boolean;
+  onClick?: () => void;
 }
 
 
@@ -24,5 +25,5 @@ export interface Props
 export interface ButtonHelperParams {
   variant?: ButtonVariant;
   fullWidth?: Boolean;
-  size?: number;
+  size?: number | string;
 }

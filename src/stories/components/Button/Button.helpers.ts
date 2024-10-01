@@ -11,10 +11,17 @@ export const buttonThemes = {
   },
   text: {
     primary: "white",
+    secondary: "black",
+    error: "black",
+    warning: "black",
+    success: "black"
   },
   border: {
+    primary: "black",
     secondary: "black",
     warning: "black",
+    error: "black",
+    success: "black"
   }
 }
 

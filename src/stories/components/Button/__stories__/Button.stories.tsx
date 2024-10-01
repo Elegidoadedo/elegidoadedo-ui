@@ -46,6 +46,7 @@ const ButtonVariations = (props: Props) => {
         <Button
           {...props}
           variant="primary"
+          text='primary variant'
         
         />
         <Button
